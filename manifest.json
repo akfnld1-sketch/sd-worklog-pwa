@@ -1,0 +1,22 @@
+{
+  "name": "SD바이오센서 출근부 (개인용)",
+  "short_name": "SD 출근부",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "description": "서버 없이 개인이 쓰는 출근 기록 + 급여 계산기(PWA)",
+  "icons": [
+    {
+      "src": "./android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

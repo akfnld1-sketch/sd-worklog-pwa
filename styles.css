@@ -1,0 +1,398 @@
+:root{
+  --bg: #0b1220;
+  --card: #0f172a;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --line: rgba(148,163,184,.25);
+  --accent: #60a5fa;
+  --danger: #fb7185;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 16px;
+
+  /* ✅ 버튼 컬러 */
+  --c-in: #22c55e;
+  --c-out: #3b82f6;
+  --c-leave: #38bdf8;
+  --c-half: #a78bfa;
+  --c-absent: #fb7185;
+}
+
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", sans-serif; background: var(--bg); color: var(--text); }
+a{ color: inherit; }
+
+.wrap{ max-width: 980px; margin: 0 auto; padding: 16px; padding-bottom: 40px; }
+
+.top{
+  display:flex; gap:14px; align-items:flex-start; justify-content:space-between;
+  padding: 14px 14px; border:1px solid var(--line); border-radius: var(--radius);
+  background: color-mix(in oklab, var(--card) 92%, black 8%); box-shadow: var(--shadow);
+}
+
+.brand .titleRow{ display:flex; gap:10px; align-items:center; }
+.brandTitle{ display:flex; flex-direction:column; gap:2px; line-height:1.1; }
+.brandTop{ font-weight: 900; font-size: 16px; letter-spacing: .2px; }
+.brandBottom{ font-weight: 900; font-size: 18px; letter-spacing: .2px; }
+
+.sub{ margin-top:6px; color: var(--muted); font-size: 12px; }
+
+.pill{
+  font-size: 11px; padding: 3px 8px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted);
+}
+
+.topBtns{ display:flex; gap:8px; flex-wrap: wrap; justify-content:flex-end; }
+
+.btn{
+  border:1px solid var(--line); background: var(--accent); color: #0b1220;
+  padding: 9px 10px; border-radius: 12px; cursor:pointer; font-weight: 800;
+  transition: transform .05s ease, opacity .15s ease, box-shadow .15s ease;
+}
+.btn:hover{ opacity: .95; }
+.btn:active{ transform: translateY(1px); }
+.btn.ghost{ background: transparent; color: var(--text); }
+.btn.danger{ background: transparent; color: var(--danger); border-color: color-mix(in oklab, var(--danger) 40%, var(--line) 60%); }
+
+/* ✅ 액션 버튼들: 각각 컬러 */
+.btn.btn-in{ background: color-mix(in oklab, var(--c-in) 85%, black 15%); border-color: color-mix(in oklab, var(--c-in) 50%, var(--line) 50%); }
+.btn.btn-out{ background: color-mix(in oklab, var(--c-out) 85%, black 15%); border-color: color-mix(in oklab, var(--c-out) 50%, var(--line) 50%); }
+.btn.btn-leave{ background: color-mix(in oklab, var(--c-leave) 85%, black 15%); border-color: color-mix(in oklab, var(--c-leave) 50%, var(--line) 50%); }
+.btn.btn-half{ background: color-mix(in oklab, var(--c-half) 85%, black 15%); border-color: color-mix(in oklab, var(--c-half) 50%, var(--line) 50%); }
+.btn.btn-absent{ background: color-mix(in oklab, var(--c-absent) 85%, black 15%); border-color: color-mix(in oklab, var(--c-absent) 50%, var(--line) 50%); }
+
+/* ✅ 눌러서 선택된 상태(테두리/그림자) */
+.btn.selected{
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 40%, transparent 60%);
+  outline: none;
+}
+
+.tabs{
+  margin-top: 12px;
+  display:flex; gap:10px;
+  padding: 10px; border:1px solid var(--line); border-radius: var(--radius);
+  background: color-mix(in oklab, var(--card) 92%, black 8%);
+}
+.tab{
+  flex: 0 0 auto;
+  border:1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+.tab.active{
+  background: color-mix(in oklab, var(--accent) 25%, transparent 75%);
+  border-color: color-mix(in oklab, var(--accent) 45%, var(--line) 55%);
+}
+
+.card{
+  margin-top: 12px;
+  border:1px solid var(--line);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+}
+
+.cardHead{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  gap: 12px; margin-bottom: 10px;
+}
+h2{ margin:0; font-size: 15px; }
+.mini{ color: var(--muted); font-size: 12px; }
+
+.row{ display:flex; gap:10px; align-items:center; justify-content:center; }
+.row.tight{ justify-content:flex-end; }
+.field{ display:flex; flex-direction:column; gap:6px; }
+label{ font-size: 12px; color: var(--muted); }
+.input{
+  width: 100%;
+  background: color-mix(in oklab, var(--bg) 30%, var(--card) 70%);
+  border:1px solid var(--line);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  outline:none;
+}
+.input:focus{ border-color: color-mix(in oklab, var(--accent) 55%, var(--line) 45%); }
+
+.grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.grid3{ display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; }
+
+.actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px; }
+
+.dow{
+  display:grid; grid-template-columns: repeat(7,1fr);
+  gap:8px; margin-top: 10px; color: var(--muted); font-size: 12px;
+}
+.calendar{
+  margin-top: 8px;
+  display:grid; grid-template-columns: repeat(7,1fr);
+  gap:8px;
+}
+.day{
+  min-height: 92px;
+  border:1px solid var(--line);
+  border-radius: 14px;
+  padding: 8px;
+  background: color-mix(in oklab, var(--bg) 20%, var(--card) 80%);
+  cursor:pointer;
+  position: relative;
+  overflow:hidden;
+}
+.day:hover{ border-color: color-mix(in oklab, var(--accent) 40%, var(--line) 60%); }
+.day.disabled{ opacity: .45; cursor:not-allowed; }
+.day.selected{ outline: 2px solid color-mix(in oklab, var(--accent) 70%, transparent 30%); }
+.day.today{ border-color: color-mix(in oklab, var(--accent) 55%, var(--line) 45%); }
+
+.dayNum{ font-weight: 900; font-size: 13px; }
+.dayMark{
+  margin-top: 6px;
+  white-space: pre-line;
+  font-size: 11px;
+  color: color-mix(in oklab, var(--text) 82%, var(--muted) 18%);
+  line-height: 1.25;
+}
+.markStatus{ font-weight: 900; }
+.markLeave{ color: #7dd3fc; }
+.markHalf{ color: #c4b5fd; }
+.markAbsent{ color: #fda4af; }
+
+.calHead{ display:flex; justify-content:space-between; align-items:center; gap: 12px; }
+.calNav{ display:flex; gap:10px; align-items:center; }
+.calMonth{ font-weight: 900; }
+.calHint{ color: var(--muted); font-size: 12px; text-align:right; }
+
+.toast{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border:1px dashed var(--line);
+  border-radius: 12px;
+  color: var(--muted);
+  min-height: 42px;
+  display:flex;
+  align-items:center;
+}
+
+.hint{
+  border:1px dashed var(--line);
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.foot{
+  margin-top: 14px;
+  text-align:center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tabPanel{ display:none; }
+.tabPanel.active{ display:block; }
+
+/* ✅ PayCard: 기본은 숨김 */
+.payCard{
+  display:none;
+  transform-origin: top;
+}
+.payCard.open{ display:block; }
+
+/* ✅ PayCard: "급여만 보기" 전체화면 모드 */
+body.payOnly #tabsBar,
+body.payOnly .tabPanel,
+body.payOnly #footerBar{
+  display:none !important;
+}
+body.payOnly #payCard{
+  display:block !important;
+  margin-top: 12px;
+}
+
+.sumBox{
+  margin-top: 12px;
+  border:1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  background: color-mix(in oklab, var(--bg) 18%, var(--card) 82%);
+}
+.sumRow{ display:flex; justify-content:space-between; align-items:center; padding: 6px 0; }
+.sumRow .k{ color: var(--muted); }
+.sumRow .v{ font-weight: 900; }
+.sumDivider{ height:1px; background: var(--line); margin: 8px 0; }
+.sumRow.total .v{ font-size: 18px; }
+
+.reportMonth{
+  min-width: 140px;
+  text-align:center;
+  font-weight: 900;
+}
+
+.statsGrid{
+  margin-top: 12px;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.stat{
+  border:1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px;
+  background: color-mix(in oklab, var(--bg) 15%, var(--card) 85%);
+}
+.stat .k{ color: var(--muted); font-size: 12px; }
+.stat .v{ font-weight: 900; font-size: 18px; margin-top: 6px; }
+
+@media (max-width: 720px){
+  .top{ flex-direction: column; }
+  .grid2{ grid-template-columns: 1fr; }
+  .grid3{ grid-template-columns: 1fr; }
+  .day{ min-height: 86px; }
+  .statsGrid{ grid-template-columns: 1fr; }
+}
+
+/* =========================
+   ✅ 상단 버튼 전용 컬러
+   ========================= */
+:root{
+  --top-pay: #22c55e;     /* 급여계산기: 초록 */
+  --top-csv: #3b82f6;     /* CSV: 파랑 */
+  --top-backup: #a78bfa;  /* 백업: 보라 */
+  --top-restore: #fb7185; /* 복원: 핑크/레드 */
+}
+
+/* 상단 버튼은 ghost여도 색이 들어가게 */
+.topBtns .btn.ghost{
+  background: transparent;
+}
+
+/* 각각 버튼 색 */
+.topBtns .top-pay{
+  border-color: color-mix(in oklab, var(--top-pay) 55%, var(--line) 45%);
+  color: var(--top-pay);
+}
+.topBtns .top-csv{
+  border-color: color-mix(in oklab, var(--top-csv) 55%, var(--line) 45%);
+  color: var(--top-csv);
+}
+.topBtns .top-backup{
+  border-color: color-mix(in oklab, var(--top-backup) 55%, var(--line) 45%);
+  color: var(--top-backup);
+}
+.topBtns .top-restore{
+  border-color: color-mix(in oklab, var(--top-restore) 55%, var(--line) 45%);
+  color: var(--top-restore);
+}
+
+/* 호버 시 살짝 채워지는 느낌 */
+.topBtns .btn.ghost:hover{
+  opacity: 1;
+  background: color-mix(in oklab, var(--card) 70%, white 30%);
+}
+.topBtns .top-pay:hover{
+  background: color-mix(in oklab, var(--top-pay) 18%, transparent 82%);
+}
+.topBtns .top-csv:hover{
+  background: color-mix(in oklab, var(--top-csv) 18%, transparent 82%);
+}
+.topBtns .top-backup:hover{
+  background: color-mix(in oklab, var(--top-backup) 18%, transparent 82%);
+}
+.topBtns .top-restore:hover{
+  background: color-mix(in oklab, var(--top-restore) 18%, transparent 82%);
+}
+
+/* =========================
+   ✅ 상단 버튼 FULL COLOR
+   ========================= */
+
+/* 공통 */
+.topBtns .btn{
+  border: none;
+  color: #0b1220;
+  font-weight: 800;
+}
+
+/* 급여계산기 */
+.topBtns .top-pay{
+  background: #22c55e;
+}
+.topBtns .top-pay:hover{
+  background: #16a34a;
+}
+
+/* CSV */
+.topBtns .top-csv{
+  background: #3b82f6;
+}
+.topBtns .top-csv:hover{
+  background: #2563eb;
+}
+
+/* 백업 */
+.topBtns .top-backup{
+  background: #a78bfa;
+}
+.topBtns .top-backup:hover{
+  background: #8b5cf6;
+}
+
+/* 복원 */
+.topBtns .top-restore{
+  background: #fb7185;
+}
+.topBtns .top-restore:hover{
+  background: #f43f5e;
+}
+
+/* 눌림 효과 */
+.topBtns .btn:active{
+  transform: translateY(1px) scale(0.98);
+}
+
+/* =========================
+   ✅ 상단 버튼 FULL COLOR (강제 적용)
+   ========================= */
+
+.topBtns .btn{
+  background: #334155 !important;
+  color: #ffffff !important;
+  border: none;
+  font-weight: 800;
+}
+
+/* 급여계산기 */
+.topBtns .top-pay{
+  background: #22c55e !important;
+}
+.topBtns .top-pay:hover{
+  background: #16a34a !important;
+}
+
+/* CSV */
+.topBtns .top-csv{
+  background: #3b82f6 !important;
+}
+.topBtns .top-csv:hover{
+  background: #2563eb !important;
+}
+
+/* 백업 */
+.topBtns .top-backup{
+  background: #a78bfa !important;
+}
+.topBtns .top-backup:hover{
+  background: #8b5cf6 !important;
+}
+
+/* 복원 */
+.topBtns .top-restore{
+  background: #fb7185 !important;
+}
+.topBtns .top-restore:hover{
+  background: #f43f5e !important;
+}
+
